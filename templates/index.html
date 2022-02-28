@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block body %}
+<div class="jumbotron text-center">
+  <h3>Ufuk Adanir'in Bloguna Hosgeldiniz</h3>
+  <p>Bu Blogda bir seyler bir seyler yapabilirsiniz</p>
+</div>
+
+{% if answer=="evet" %}
+<p>Cevabiniz evetmis</p>
+{% else %}
+<p>Cevabiniz hayirmis</p>
+{% endif %}
+
+<ul>
+  {% for article in articles %}
+  <li>
+    Article Id: {{article.id}} - Title: {{article.title}} - Context:
+    {{article.context}}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock body %}
